@@ -1,0 +1,7 @@
+{
+  "name": "4S-api-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
