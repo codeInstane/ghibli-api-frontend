@@ -43,4 +43,4 @@ jobs:
       
       - name: Test
         run: |
-          npm run test:prod
+          npm run test:headless
