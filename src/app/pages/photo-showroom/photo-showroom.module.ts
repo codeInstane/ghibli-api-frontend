@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { PhotoShowroomPageRoutingModule } from './photo-showroom-routing.module';
 
 import { PhotoShowroomPage } from './photo-showroom.page';
-import { OrderByPipe } from '../../pipe/orderby.pipe';
+//import { OrderByPipe } from '../../pipe/orderby.pipe';
 
 @NgModule({
   imports: [
@@ -16,6 +16,6 @@ import { OrderByPipe } from '../../pipe/orderby.pipe';
     IonicModule,
     PhotoShowroomPageRoutingModule,    
   ],
-  declarations: [PhotoShowroomPage, OrderByPipe]
+  declarations: [PhotoShowroomPage, /*OrderByPipe*/]
 })
 export class PhotoShowroomPageModule {}
