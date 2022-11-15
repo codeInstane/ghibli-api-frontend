@@ -117,13 +117,8 @@
             "ci": {
               "progress": false,
               "watch": false
-            },
-            "production": {
-              "sourceMap": false,
-              "codeCoverage": true,
-              "browsers": "ChromeHeadless",
-              "watch": false
             }
+            
           }
         },
         "lint": {

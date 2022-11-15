@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
+
 export interface ApiResult {
   status: number; 
   attached_image: any[];
@@ -38,7 +39,7 @@ export class PhotoShowroomService {
     //  retry(3), // retry a failed request up to 3 times
     //  catchError(this.handleError) // then handle the error
    // );    
-    return this.http.get<ApiResult>(`${environment.fourS_Url}`).pipe(
+    return this.http.get<ApiResult>(`${environment.apiurl.fourS_Url}`).pipe(
     retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
    );   
@@ -53,7 +54,7 @@ export class PhotoShowroomService {
     //   retry(3), // retry a failed request up to 3 times
     //   catchError(this.handleError) // then handle the error
     //  );
-   return this.http.get<ApiResult>(`${environment.fourS_Url}/${id}`).pipe(
+   return this.http.get<ApiResult>(`${environment.apiurl.fourS_Url}/${id}`).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
      );
@@ -64,7 +65,7 @@ export class PhotoShowroomService {
   }
 
   getGhibliapi() : Observable<any> {
-   return this.http.get(`${environment.baseUrl}`).pipe(
+   return this.http.get(`${environment.apiurl.baseUrl}`).pipe(
     retry(3), // retry a failed request up to 3 times
     catchError(this.handleError) // then handle the error
    );     //baseUrl: 'https://ghibliapi.herokuapp.com/films'
@@ -72,7 +73,7 @@ export class PhotoShowroomService {
   }
 
   getGhibliapiDetails(id: string) : Observable<any> {
-    return this.http.get(`${environment.baseUrl}/${id}`).pipe(
+    return this.http.get(`${environment.apiurl.baseUrl}/${id}`).pipe(
       retry(3), // retry a failed request up to 3 times
       catchError(this.handleError) // then handle the error
      ); //baseUrl: 'https://ghibliapi.herokuapp.com/films'
