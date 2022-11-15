@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ghibliapi Photo Showroom</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item button *ngFor="let item of photos | orderBy: 'rt_score': 'desc'" [routerLink]="[item.id]"  >    
+    <ion-avatar slot="start">
+      <ion-img [src]="item.image"></ion-img>
+    </ion-avatar>
+
+    <ion-label>{{ item.director }}</ion-label>
+    
+    <ion-label>{{ item.original_title}}  
+      <p>{{ item.release_date}} </p>
+    </ion-label>
+
+    <ion-badge slot="end"> {{ item.rt_score }} </ion-badge>
+
+  </ion-item>
+</ion-list>
+
+<ion-infinite-scroll (ionInfinite)="loadMore($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more data..."
+    >
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

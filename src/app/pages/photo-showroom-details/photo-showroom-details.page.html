@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>{{ photo?.original_title}} {{ photo?.title }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/photo-showroom">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="photo">
+    <ion-img [src]="photo.movie_banner"></ion-img>
+
+    <ion-card-header>
+      <ion-card-title>Producer: {{ photo.producer}}</ion-card-title>
+      <ion-text color="dark">Description: </ion-text>
+      <ion-card-subtitle>{{ photo.description}}</ion-card-subtitle>
+
+      <ion-text color="tertiary">
+        <span>Running time: {{ photo.running_time }} mins</span>        
+      </ion-text>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="openHomepage()" >Open Homepage</ion-button>
+</ion-footer>

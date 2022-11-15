@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>4S Photo Showroom</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <!-- <ion-item button *ngFor="let item of images['attached_image'] | orderBy: 'cre_dt': 'desc'"  >  -->
+    <ion-item *ngFor="let item of images | orderBy: 'cre_dt': 'desc'"  >    
+    <ion-thumbnail slot="start">
+      <ion-img [src]="item.data_url"></ion-img>
+    </ion-thumbnail>
+
+    <ion-label>{{ item.cre_dt }}</ion-label>
+    
+    <!-- <ion-label>{{ item.name_chi_fullname}} </ion-label> -->
+
+    <ion-badge slot="end"> {{ item.name_chi_fullname }} </ion-badge>
+
+  </ion-item>
+</ion-list>
+
+<!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="Loading more data..."
+    >
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll> -->
+</ion-content>
