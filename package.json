@@ -10,7 +10,8 @@
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:proxy": "ng serve --proxy-config src/proxy.conf.json --open"
+    "start:proxy": "ng serve --proxy-config src/proxy.conf.json --open",
+    "deploy": "ng deploy -base-href=/ghibli-api-frontend/"
   },
   "private": true,
   "dependencies": {

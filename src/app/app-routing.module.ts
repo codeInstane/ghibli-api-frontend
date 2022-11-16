@@ -5,8 +5,8 @@ const routes: Routes = [
   
   {
     path: '',
-    redirectTo: 'photo-showroom',
-    //redirectTo: 'ghibliapi',
+    //redirectTo: 'photo-showroom',
+    redirectTo: 'ghibliapi',
     //loadChildren: 
     pathMatch: 'full'
   },
