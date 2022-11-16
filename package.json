@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:proxy": "ng serve --proxy-config src/proxy.conf.json --open",
-    "deploy": "ng deploy -base-href=/ghibli-api-frontend/"
+    "deploy": "ng deploy -base-href=/https://codeinstane.github.io/ghibli-api-frontend/"
   },
   "private": true,
   "dependencies": {
