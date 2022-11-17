@@ -146,7 +146,12 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/ghibli-api-frontend/",
+            "name": "Anthony",
+            "email": "ant@ant.com"
+          }
         }
       }
     }
