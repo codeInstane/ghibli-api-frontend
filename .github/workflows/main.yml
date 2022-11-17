@@ -59,5 +59,4 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Deploy        
-        run: |          
-          npm run ng -- deploy --no-silent
+        uses: actions/deploy-pages@v1
