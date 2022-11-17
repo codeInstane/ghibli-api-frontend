@@ -64,7 +64,6 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
       - name: Deploy
+        uses: actions/deploy-pages@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |          
-          npm run ng -- deploy --no-silent
