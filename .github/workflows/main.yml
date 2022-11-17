@@ -58,10 +58,6 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
-      - name: Deploy
-        if: success()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.TOKEN_GITHUB_ACTION }}
-          publish_dir: dist/ghibli-api-frontend
-          enable_jekyll: true
+      - name: Deploy        
+        run: |          
+          npm run ng -- deploy --no-silent
