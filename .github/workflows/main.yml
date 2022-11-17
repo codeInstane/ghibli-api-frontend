@@ -3,7 +3,12 @@ on:
   push:
     branches:
       - main
-
+      
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -58,6 +63,8 @@ jobs:
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
-      - name: Deploy        
+      - name: Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |          
           npm run ng -- deploy --no-silent
