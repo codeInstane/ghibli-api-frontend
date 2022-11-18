@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build ng build --deploy-url /ghibli-api-frontend/",
+    "build:prod": "ng build --configuration production --base-href /ghibli-api-frontend/",
     "test:prod": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
