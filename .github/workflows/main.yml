@@ -25,10 +25,17 @@ jobs:
         run: npm run build:prod
 
       - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: public
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION }}
+        #uses: crazy-max/ghaction-github-pages@v3
+        #with:
+          #target_branch: gh-pages
+          #build_dir: public
+        #env:
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION }}
   
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2      
+        env:
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+          PUBLISH_BRANCH: gh-pages
+          #PUBLISH_DIR: www
+          publish_dir: ./public
