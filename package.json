@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build --configuration production --base-href https://codeinstane.github.io/ghibli-api-frontend/",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "build:prod": "ng build ng build --deploy-url /ghibli-api-frontend/",
+    "test:prod": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start:proxy": "ng serve --proxy-config src/proxy.conf.json --open",
