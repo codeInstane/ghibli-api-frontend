@@ -68,20 +68,20 @@ jobs:
 
 
       - name: Deploy to GitHub Pages
-        #uses: crazy-max/ghaction-github-pages@v3
-        #with:
-          #target_branch: gh-pages
-          #build_dir: public
-        #env:
-          #GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION }}
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v3
+        with:
+          target_branch: gh-pages
+          build_dir: www
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION }}
+          enable_jekyll: true
   
       #- name: Deploy
-        if: success()
-        uses: peaceiris/actions-gh-pages@v3      
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #github-token: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: www
-          #publish_dir: ./public
-          enable_jekyll: true
+        #if: success()
+        #uses: peaceiris/actions-gh-pages@v2      
+        #env:
+        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+        #  PUBLISH_BRANCH: gh-pages
+        #  PUBLISH_DIR: www          
+       #   enable_jekyll: true
