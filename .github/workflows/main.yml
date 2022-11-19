@@ -67,21 +67,11 @@ jobs:
           body: ${{ steps.changelog.outputs.clean_changelog }}
 
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages        
         if: success()
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: www
+        uses: peaceiris/actions-gh-pages@v2      
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_ACTION }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: www          
           enable_jekyll: true
-  
-      #- name: Deploy
-        #if: success()
-        #uses: peaceiris/actions-gh-pages@v2      
-        #env:
-        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
-        #  PUBLISH_BRANCH: gh-pages
-        #  PUBLISH_DIR: www          
-       #   enable_jekyll: true
