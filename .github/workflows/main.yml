@@ -78,7 +78,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3     
         env:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          github-token: ${{ secrets.GITHUB_ACTION }}         
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}         
           #PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: www          
           enable_jekyll: true
