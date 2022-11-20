@@ -6,6 +6,11 @@ on:
 jobs:
   ci:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
 
     strategy:
       matrix:
@@ -22,7 +27,7 @@ jobs:
 
       - name: Cache node modules
         id: cache-nodemodules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -41,7 +46,7 @@ jobs:
       #    cache: 'npm'
 
       - name: Install dependencies
-        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        #if: steps.cache-nodemodules.outputs.cache-hit != 'true'
         run: npm ci
 
           
@@ -51,7 +56,7 @@ jobs:
 
       - name: Conventional Changelog Action
         id: changelog
-        uses: TriPSs/conventional-changelog-action@v3
+        uses: TriPSs/conventional-changelog-action@v1
         with:
           github-token: ${{ secrets.GITHUB_ACTION }}
           output-file: "false"
@@ -73,6 +78,6 @@ jobs:
         env:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           github-token: ${{ secrets.GITHUB_ACTION }}         
-          PUBLISH_BRANCH: gh-pages
+          #PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: www          
           enable_jekyll: true
