@@ -76,7 +76,7 @@ jobs:
         #if: success()
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3     
-        env:
+        with:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}         
           PUBLISH_BRANCH: gh-pages
