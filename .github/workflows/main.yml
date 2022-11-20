@@ -79,6 +79,7 @@ jobs:
         env:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}         
-          #PUBLISH_BRANCH: gh-pages
+          PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: www          
           enable_jekyll: true
+          allow_empty_commit: true
