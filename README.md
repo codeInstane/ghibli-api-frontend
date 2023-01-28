@@ -14,7 +14,7 @@ ionic start {{project name}} {{template type: blank, tabs, sidemenu, list}} --ty
 
 Your Ionic app is ready! Follow these next steps:
 
-- Go to your new project: cd .\4S-api-frontend
+- Go to your new project: cd .\ghibli-api-frontend
 - Run ionic serve within the app directory to see your app in the browser
 - Run ionic capacitor add to add a native iOS or Android project using Capacitor
 - Generate your app icon and splash screens using cordova-res --skip-config --copy
